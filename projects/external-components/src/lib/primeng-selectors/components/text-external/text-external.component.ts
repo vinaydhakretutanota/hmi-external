@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { PrimeNgText } from '../../models/primeng-text';
+import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { InputText } from 'primeng/inputtext';
+import { CommonExternalComponent } from '../common-external/common-external.component';
 
 
 @Component({
@@ -7,19 +8,9 @@ import { PrimeNgText } from '../../models/primeng-text';
   templateUrl: './text-external.component.html',
   styleUrls: ['./text-external.component.scss']
 })
-export class TextExternalComponent implements OnInit {
-
-  @Input() fieldObj: any;
-  @Input() dynamicAttributes: any;
-
-  fieldProperties: PrimeNgText;
-
+export class TextExternalComponent extends CommonExternalComponent {
   constructor() { 
-    this.fieldProperties = new PrimeNgText(null);
+    super();
+    this.isDirective = true;
   }
-
-  ngOnInit(): void {
-    this.fieldProperties = new PrimeNgText(this.fieldObj.customAttributes);
-  }
-
 }

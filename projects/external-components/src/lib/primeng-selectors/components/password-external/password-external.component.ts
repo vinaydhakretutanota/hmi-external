@@ -1,24 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { PrimeNgPassword } from '../../models/primeng-password';
+import { Component, OnDestroy } from '@angular/core';
+import { CommonExternalComponent } from '../common-external/common-external.component';
 
 @Component({
   selector: 'hmi-ext-password-external',
   templateUrl: './password-external.component.html',
   styleUrls: ['./password-external.component.scss']
 })
-export class PasswordExternalComponent implements OnInit {
-
-  @Input() fieldObj: any;
-  @Input() dynamicAttributes: any;
-
-  fieldProperties: PrimeNgPassword;
-
-  constructor() {
-    this.fieldProperties = new PrimeNgPassword(null);
+export class PasswordExternalComponent extends CommonExternalComponent implements OnDestroy {
+  constructor() { 
+    super();
   }
 
-  ngOnInit(): void {
-    this.fieldProperties = new PrimeNgPassword(this.fieldObj.customAttributes);
+  ngOnDestroy() {
+    this.formGroupObj.controls[this.fieldObj.baseProperties.name].reset();
   }
-
 }
