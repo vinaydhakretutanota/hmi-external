@@ -1,0 +1,55 @@
+{
+  "dnd-0": [
+    {
+      "baseProperties": {
+        "type": "text",
+        "id": "dnd-1",
+        "name": "inputTxt1",
+        "formName": "dnd-0",
+        "label": "inputTxt1"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "keydown",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "SET_SHARED_DATA",
+              "url": "",
+              "condition": "",
+              "field": "",
+              "fieldValue": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [
+                {
+                  "varName": "abc",
+                  "staticData": "123",
+                  "cache": true,
+                  "responseAccessor": "123"
+                }
+              ],
+              "apiConfig": []
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    }
+  ]
+}
